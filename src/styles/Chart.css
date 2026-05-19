@@ -1,0 +1,320 @@
+/* ===========================
+   CHART PAGE - Layout
+   =========================== */
+.chart-page {
+  display: flex;
+  gap: 24px;
+  padding: 20px;
+  height: calc(100vh - 100px);
+  overflow: hidden;
+}
+
+/* ===========================
+   LEFT PANEL
+   =========================== */
+.chart-panel {
+  width: 280px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.chart-panel-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 800;
+  color: #2c3e50;
+  letter-spacing: -0.5px;
+}
+
+.chart-section {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.chart-section-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #95a5a6;
+  margin-bottom: 10px;
+}
+
+/* ===========================
+   COLOR PALETTE
+   =========================== */
+.color-palette {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.color-dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.color-dot:hover {
+  transform: scale(1.15);
+}
+
+.color-dot.active {
+  border-color: #2c3e50;
+  box-shadow: 0 0 0 2px white, 0 0 0 4px #2c3e50;
+  transform: scale(1.1);
+}
+
+.color-label-editor {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.color-label-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.color-label-input {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.color-label-input:focus {
+  border-color: #3498db;
+}
+
+/* ===========================
+   SELECTED SEGMENT INFO
+   =========================== */
+.segment-info {
+  background: #edf2f7;
+  border: 1px solid #d2dce6;
+}
+
+.segment-info-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.segment-info-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+}
+
+.segment-info-label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #2c3e50;
+}
+
+.segment-info-times {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.segment-info-arrow {
+  color: #95a5a6;
+}
+
+.segment-info-dur {
+  font-size: 12px;
+  font-weight: 500;
+  color: #7f8c8d;
+}
+
+.segment-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.segment-color-select {
+  flex: 1;
+  padding: 6px 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 12px;
+  background: white;
+  cursor: pointer;
+}
+
+.segment-delete-btn {
+  padding: 6px 12px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.segment-delete-btn:hover {
+  background: #c0392b;
+}
+
+/* ===========================
+   SUMMARY
+   =========================== */
+.summary-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.summary-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+}
+
+.summary-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.summary-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #555;
+  flex: 1;
+}
+
+.summary-dur {
+  font-size: 13px;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.empty-hint {
+  font-size: 12px;
+  color: #aaa;
+  font-style: italic;
+  margin: 0;
+}
+
+.chart-hint {
+  font-size: 11px;
+  color: #aaa;
+  line-height: 1.5;
+  margin: 0;
+  padding: 8px 0;
+}
+
+/* ===========================
+   CHART SVG AREA
+   =========================== */
+.chart-canvas-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+.chart-svg {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  user-select: none;
+}
+
+/* SVG text classes */
+.hour-label-major {
+  font-size: 16px;
+  font-weight: 700;
+  fill: #555;
+  font-family: inherit;
+}
+
+.hour-label-minor {
+  font-size: 11px;
+  font-weight: 500;
+  fill: #aaa;
+  font-family: inherit;
+}
+
+.segment-duration-label {
+  font-size: 13px;
+  font-weight: 700;
+  fill: white;
+  font-family: inherit;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+
+.segment-time-label {
+  font-size: 9px;
+  font-weight: 600;
+  fill: #888;
+  font-family: inherit;
+  pointer-events: none;
+}
+
+.center-summary-text {
+  font-size: 12px;
+  font-weight: 600;
+  fill: #555;
+  font-family: inherit;
+}
+
+/* Handle hover */
+.handle:hover {
+  r: 9;
+  fill: #eee;
+}
+
+/* Segment arc hover */
+.segment-arc:hover {
+  fill-opacity: 0.85 !important;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+@media (max-width: 768px) {
+  .chart-page {
+    flex-direction: column-reverse;
+    height: auto;
+    padding: 10px;
+  }
+
+  .chart-panel {
+    width: 100%;
+  }
+
+  .chart-canvas-wrapper {
+    max-height: 50vh;
+  }
+}
