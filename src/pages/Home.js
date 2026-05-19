@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { ReactComponent as PomodoroIcon } from '../assets/icons/pomodoro.svg';
 import { ReactComponent as ChartIcon } from '../assets/icons/chart.svg';
 import { ReactComponent as HabitsIcon } from '../assets/icons/habits.svg';
